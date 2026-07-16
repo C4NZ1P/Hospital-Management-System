@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package java2lab6hosmanagementsys;
+package HospitalManagementSystem;
 
-/**
- *
- * @author Canberk
- */
 public class Doctor {
     
     private String doctorName;
@@ -57,6 +49,9 @@ public class Doctor {
     
     
     public void assignPatient(Patient p){
+        if(p == null){
+            System.out.println("Invalid patient record.");
+        }
         if(noOfPatients < 4){
             patients[noOfPatients] = p.getPatientID();
             noOfPatients++;
@@ -72,9 +67,10 @@ public class Doctor {
         return "Doctor{" + "doctorName = " + doctorName + ", doctorID = " + doctorID + '}';
     }
     
+    
     public boolean equals(Doctor other){
         if(other == null) return false;
-        return(this.doctorID == other.doctorID && this.doctorName.equals(other.doctorName)); 
+        return(this.doctorID.equals(other.doctorID) && this.doctorName.equals(other.doctorName)); 
     }
 }
 
